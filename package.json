@@ -1,0 +1,41 @@
+{
+  "name": "traffic-cam-timelapse",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.693.0",
+    "@aws-sdk/lib-storage": "^3.693.0",
+    "aws-sdk": "^2.1692.0",
+    "dotenv": "^16.4.5",
+    "looks-same": "^9.0.1",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.5",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/scrape.js",
+    "download": "ts-node-dev --quiet --respawn src/download.ts",
+    "video": "ts-node-dev --quiet --respawn src/video.ts",
+    "list-duplicates": "ts-node-dev --quiet --respawn src/list-duplicates.ts",
+    "scrape": "ts-node-dev --quiet --respawn src/scrape.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kevinnewcombe/traffic-cam-timelapse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/kevinnewcombe/traffic-cam-timelapse#readme"
+
+}
