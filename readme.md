@@ -1,5 +1,5 @@
 # Traffic Cam Timelapse
-Make a timelapse video from publicly accessible Alberta traffic cameras. Example video:
+Make a timelapse video from publicly accessible Alberta traffic cameras. Snippet of a sample video:
 
 [Sample video](https://github.com/user-attachments/assets/300d8e07-2bae-4d7f-80f3-8e5d8f30552b)
 
