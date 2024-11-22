@@ -24,10 +24,9 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/scrape.js",
-    "download": "ts-node-dev --quiet --respawn src/download.ts",
-    "video": "ts-node-dev --quiet --respawn src/video.ts",
-    "list-duplicates": "ts-node-dev --quiet --respawn src/list-duplicates.ts",
-    "scrape": "ts-node-dev --quiet --respawn src/scrape.ts"
+    "scrape": "ts-node-dev --quiet --respawn src/scrape.ts",
+    "compile": "ts-node-dev --quiet --respawn src/compile.ts",
+    "list-duplicates": "ts-node-dev --quiet --respawn src/list-duplicates.ts"
   },
   "repository": {
     "type": "git",

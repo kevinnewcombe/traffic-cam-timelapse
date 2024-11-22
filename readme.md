@@ -15,6 +15,5 @@ At the time of this writing, 4 days after deploying this, the app is grabbing im
 * Copy `.env.example` to `.env` and populate the values.
 
 ## Commands
-* `npm run download` downloads all images from the S3 bucket to the local `_downloads` folder
-* `npm run video` builds videos from all the images in the `_downloads` folder
+* `npm run compile` downloads all images from the S3 bucket and creates a separate video for each id
 * `npm run list-duplicates` goes through all files in the `_downloads` and prints a list of duplicate images to `output.txt`
