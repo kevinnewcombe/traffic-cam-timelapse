@@ -166,7 +166,9 @@ async function copyImages(id:string) {
     'ESS_AB_ABDOT_022-08 RANCHLANDS.C1--20',
     'loc89C--2',
     'lul34vc1nrp--3',
+    'VTMS_AB_216-06D AHDNW WHITEMUD.C1--20',
     'VTMS_AB_216-06D AHDNW WHITEMUD.C2--20'
+    
   ];
   for(const id of ids){
     await copyImages(id);

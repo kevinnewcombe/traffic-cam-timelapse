@@ -3,9 +3,6 @@ Make a timelapse video from publicly accessible Alberta traffic cameras. Snippet
 
 [Sample video](https://github.com/user-attachments/assets/300d8e07-2bae-4d7f-80f3-8e5d8f30552b)
 
-
-
-
 ## Details
 [`scape.ts`](/src/scrape.ts) pulls images from [Alberta traffic cameras](https://511.alberta.ca/cctv) and copies them to an S3 bucket. At the time of this writing, this is currently deployed to Railway and triggered at 5 minute intervals.
 
