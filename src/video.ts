@@ -3,6 +3,12 @@ const ffmpegStatic = require('ffmpeg-static');
 const ffmpeg = require('fluent-ffmpeg');
 const downloadsPath = '_downloads/';
 
+const startTimestamp = Math.floor( Date.now() / 1000) - (60 * 60 * 24);
+const minInterval = 60 * 5;
+
+const startString = 'timestamp';
+const endString = '.webp';
+
 ffmpeg.setFfmpegPath(ffmpegStatic);
 const createVideo = async(id:string) => {
   const targetDir = `_sequence/images/${id}`;
@@ -55,14 +61,24 @@ const createVideo = async(id:string) => {
       const targetDir = `_sequence/images/${id}`;
       await fs.mkdir(targetDir, { recursive: true })
       const files = await fs.readdir(downloadIdFolder);
-        for(let i = 0; i<files.length; i++){
-          const src = `${downloadIdFolder}/${files[i]}`;
-          const dest = `${targetDir}/${(i + 1).toString().padStart(4, "0")}.webp`; 
-          await fs.copyFile(src, dest, 0, (err:any) => {
-            if (err) {
-              console.log("Error Found:", err);
-            }
-          });
+      let currentTimestamp = 0;  
+      let currentIndex = 0;
+      for(let i = 0; i<files.length; i++){
+          const filename = files[i];
+          const tsStart = filename.indexOf(startString) + startString.length;
+          const tsEnd = filename.indexOf(endString, tsStart);
+          const timestamp = parseInt(filename.substring(tsStart, tsEnd), 10);
+          if(timestamp > startTimestamp && timestamp - currentTimestamp > minInterval){
+            currentTimestamp = timestamp;
+            const src = `${downloadIdFolder}/${files[i]}`;
+            const dest = `${targetDir}/${(currentIndex++).toString().padStart(4, "0")}.webp`; 
+            await fs.copyFile(src, dest, 0, (err:any) => {
+              if (err) {
+                console.log("Error Found:", err);
+              }
+            });
+          }
+
         }
         await createVideo(id);
       }// end of folder
