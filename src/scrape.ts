@@ -163,6 +163,7 @@ async function copyImages(id:string) {
     'ESS_AB_014-16 WAINWRIGHT.C1--20',
     'ESS_AB_ABDOT_003-14A WHITLA.C1--20',
     'ESS_AB_ABDOT_006-04 WATERTON PARK.C3--20',
+    'ESS_AB_ABDOT_006-04 WATERTON PARK.C2--20',
     'ESS_AB_ABDOT_022-08 RANCHLANDS.C1--20',
     'loc89C--2',
     'lul34vc1nrp--3',

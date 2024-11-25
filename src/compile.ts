@@ -11,7 +11,9 @@ import fs from "fs";
 const downloadsDir = '_downloads/';
 
 // Start / interval parameters (in seconds) for video creation. Change these both to 0 to use _all_ images. 
-const startTimestamp = Math.floor( Date.now() / 1000) - (60 * 60 * 24);
+// const startTimestamp = Math.floor( Date.now() / 1000) - (60 * 60 * 12);
+
+const startTimestamp = Math.floor( Date.parse('25 November 2024 7:00:00 GMT') / 1000);
 const minInterval = 60 * 5;
 
 const startString = 'timestamp';
